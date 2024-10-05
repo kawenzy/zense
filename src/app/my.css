@@ -10,3 +10,4 @@
 .bg{background-color: var(--background);}
 .secondary{color: var(--secondary)}
 .accent{color: var(--accent);}
+.bg-root{background-color: var(--text)}

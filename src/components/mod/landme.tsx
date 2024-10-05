@@ -26,7 +26,7 @@ export const LandItem = ({
         <div
         ref={ref}
         className={cn(
-            "p-6 m-auto items-center justify-center flex appearance-none",
+            " m-auto items-center justify-center flex appearance-none",
             className
         )}
         >
@@ -56,7 +56,7 @@ export const LandItem = ({
     return (
         <div 
         ref={ref}
-        className={cn("p-6 items-center m-auto justify-center appearance-none", className)}>
+        className={cn(" items-center m-auto justify-center appearance-none", className)}>
             {children}
         </div>
     )
@@ -65,7 +65,7 @@ export const LandItem = ({
     return (
       <div
       ref={ref}
-      className={cn("p-6 items justify-center flex gap-4 appearance-none")}
+      className={cn(" items justify-center flex gap-4 appearance-none")}
       >
         {children}
       </div>
@@ -87,7 +87,7 @@ export const LandBack = ({
   return(
     <div
     ref={ref}
-    className={cn("p4 items-center justify-center", className)}
+    className={cn(" items-center justify-center", className)}
     >
       {children}
     </div>
