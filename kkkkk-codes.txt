@@ -1,0 +1,11 @@
+Your selected colors:
+
+    Text: #324462 - rgb(50, 68, 98) - hsl(218, 32%, 29%)
+    Background: #f1f9fe - rgb(241, 249, 254) - hsl(203, 87%, 97%)
+    Primary: #67bbe0 - rgb(103, 187, 224) - hsl(198, 66%, 64%)
+    Secondary: #d8ebf8 - rgb(216, 235, 248) - hsl(204, 70%, 91%)
+    Accent: #d4eaf7 - rgb(212, 234, 247) - hsl(202, 69%, 90%)
+
+Realtime Colors link for selected colors: https://www.realtimecolors.com/?colors=324462-f1f9fe-67bbe0-d8ebf8-d4eaf7&fonts=Preahvihear-Poppins
+
+Thanks for using RealtimeColors.com!

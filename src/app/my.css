@@ -1,0 +1,12 @@
+:root {--text: hsl(218, 32%, 29%);--background: hsl(0, 0%, 100%);--primary: hsl(198, 66%, 64%);--secondary: hsl(204, 70%, 91%);--accent: hsl(185, 87%, 97%);}
+.bg-primary{background-color: var(--primary);}
+.primary{color: var(--primary);}
+.text-primary{color: var(--primary);}
+.text{color: var(--text);}
+.text-second{color: var(--secondary);}
+.text-accent{color: var(--accent);}
+.bg-accent{background-color: var(--accent);}
+.bg-second{background-color: var(--secondary);}
+.bg{background-color: var(--background);}
+.secondary{color: var(--secondary)}
+.accent{color: var(--accent);}
