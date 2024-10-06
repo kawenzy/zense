@@ -13,7 +13,7 @@ export const LandItem = ({
 }: {
   text?: string[];
     tag: "quo" | "barflex" | "humber" | "ai";
-  words: {
+  words?: {
     text: string;
     className?: string;
   }[];
@@ -26,7 +26,7 @@ export const LandItem = ({
         <div
         ref={ref}
         className={cn(
-            " m-auto items-center justify-center flex appearance-none",
+            " m-auto items-center  flex appearance-none",
             className
         )}
         >
@@ -37,18 +37,6 @@ export const LandItem = ({
           strings: text,
           autoStart: true
         }}
-          onInit={(typewriter) => {
-            typewriter.typeString('Hello World!')
-              .callFunction(() => {
-                console.log('String typed out!');
-              })
-              .pauseFor(2500)
-              .deleteAll()
-              .callFunction(() => {
-                console.log('All strings were deleted');
-              })
-              .start();
-          }}
           />
         </div>
   );}
@@ -56,7 +44,7 @@ export const LandItem = ({
     return (
         <div 
         ref={ref}
-        className={cn(" items-center m-auto justify-center appearance-none", className)}>
+        className={cn(" items-center m-auto  appearance-none", className)}>
             {children}
         </div>
     )
@@ -65,7 +53,7 @@ export const LandItem = ({
     return (
       <div
       ref={ref}
-      className={cn(" items justify-center flex gap-4 appearance-none")}
+      className={cn(" items  flex gap-4 appearance-none")}
       >
         {children}
       </div>
