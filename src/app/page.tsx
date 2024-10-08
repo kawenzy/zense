@@ -22,10 +22,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
+  Angry,
   BotIcon,
   BrainIcon,
   ExternalLinkIcon,
   Frown,
+  Laugh,
   LucideProps,
   MessageCircleReply,
   Music2Icon,
@@ -35,6 +37,7 @@ import {
 } from "lucide-react";
 import { CardBody } from "@/components/ui/3d-card";
 import { Input } from "@/components/ui/input";
+import { Hide } from "@/components/mod/hide";
 export default function Home() {
   const quotes = [
     "Kehidupan adalah 10% yang terjadi pada kita dan 90% bagaimana kita meresponsnya.",
@@ -174,6 +177,12 @@ export default function Home() {
       color: "bg-lime-100",
     },
   ];
+  const both  = [
+    "./both/1.svg",
+    "./both/2.svg",
+    "./both/3.svg",
+    "./both/4.svg",
+  ]
   return (
     <div className="bg-accen">
       <Masuk
@@ -431,6 +440,39 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="w-full bg-plgeen">
+        <div className="content min-h-[60vh] py-20 flex items-center justify-center m-auto w-full ">
+          <div className="flex flex-col items-center m-auto gap-4">
+            <div className="flex flex-row gap-4 items-center m-auto">
+              <div className="rounded bg-green-100 p-4">
+                <Smile className="text-proot size-10 sm:size-16 lg:size-20"/>
+              </div>
+              <div className="rounded bg-blue-100 p-4">
+                <Frown className="text-proot size-10 sm:size-16 lg:size-20"/>
+              </div>
+              <div className="rounded bg-red-100 p-4">
+                <Angry className="text-proot size-10 sm:size-16 lg:size-20"/>
+              </div>
+            </div>
+            <p className="preahivear text-center text-proot text-[16px] sm:text-[18px]">
+              apapun keadaan hatimu saat ini 
+              <br/>
+              zense siap membantu
+            </p>
+            <div className="bg-yellow-100 py-3 px-4 sm:py-4 sm:px-5 lg:py-4 lg:px-6 rounded appearance-none">
+              <span className="text-[18px] md:text-xl lg:text-2xl text-proot junePro">
+                Daftar
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Hide/>
+      <div className="bg-proot w-full">
+        <div className="min-h-24 w-full p-5 flex items-center m-auto justify-center">
+          <p className="text-xl preahivear text-center text-paccent">© zense 2024</p>
         </div>
       </div>
     </div>
