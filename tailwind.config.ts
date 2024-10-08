@@ -20,6 +20,14 @@ const config = {
     },
     extend: {
       colors: {
+        pme: "var(--primar)",
+        paccent: "var(--accen)",
+        proot: "var(--root)",
+        pbroot: "var(--bground)",
+        psecond: "var(--secondar)",
+        pgreen: "var(--greens)",
+        plgeen: "var(--lightg)",
+        pmatcha: "var(--matcha)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,8 +83,10 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),
-    daisyui
+  plugins: [
+    require("tailwindcss-animate"),
+    daisyui,
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 } satisfies Config
 

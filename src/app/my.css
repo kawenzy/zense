@@ -53,11 +53,11 @@
 }
 
 :root {
-    --text: hsl(219, 32%, 21%);
-    --background: hsl(0, 0%, 100%);
-    --primary: hsl(198, 77%, 60%);
-    --secondary: hsl(204, 70%, 91%);
-    --accent: hsl(207, 100%, 98%);
+    --root: hsl(219, 32%, 21%);
+    --bground: hsl(0, 0%, 100%);
+    --primar: hsl(198, 77%, 60%);
+    --secondar: hsl(204, 70%, 91%);
+    --accen: hsl(207, 100%, 98%);
     --green: hsl(145, 100%, 50%);
     --greenb: hsl(145, 100%, 80%);
     --yellow: hsl(54, 100%, 60%);
@@ -95,76 +95,4 @@
 
 .preahivear {
     font-family: preahivear, system-ui;
-}
-
-.bg-primary {
-    background-color: var(--primary);
-}
-
-.primary {
-    color: var(--primary);
-}
-
-.text-primary {
-    color: var(--primary);
-}
-
-.text {
-    color: var(--text);
-}
-
-.text-second {
-    color: var(--secondary);
-}
-
-.text-accent {
-    color: var(--accent);
-}
-
-.bg-accent {
-    background-color: var(--accent);
-}
-
-.bg-second {
-    background-color: var(--secondary);
-}
-
-.bg {
-    background-color: var(--background);
-}
-
-.secondary {
-    color: var(--secondary)
-}
-
-.accent {
-    color: var(--accent);
-}
-
-.bg-root {
-    background-color: var(--text)
-}
-
-.yellow{
-    color: var(--yellow);
-    background-color: var(--yellow);
-}
-.yellowb{
-    color: var(--yellowb);
-    background-color: var(--yellowb);
-}
-.green{
-    color: var(--green);
-    /* background-color: var(--green); */
-}
-.bg-green{
-    background-color: var(--green);
-}
-.greenb{
-    color: var(--greenb);
-    /* background-color: var(--greenb); */
-}
-
-.bg-greenb{
-    background-color: var(--greenb);
 }
