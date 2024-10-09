@@ -5,9 +5,11 @@ import { MouseEventHandler } from "react";
 
 export const Daftar = ({
   pop,
+  bop,
   className,
 }: {
   pop: MouseEventHandler<SVGSVGElement> | undefined;
+  bop: MouseEventHandler<HTMLSpanElement> | undefined;
   className?: string;
 }) => {
   return (
@@ -50,7 +52,10 @@ export const Daftar = ({
             </form>
             <p className="rockford text-proot mt-6 text-center">
               sudah punya akun ?{" "}
-              <span className="text-pme italic underline">masuk</span>{" "}
+              <span className="text-pme italic underline"
+              onClick={bop}
+              role="button"
+              >masuk</span>{" "}
               sekarang
             </p>
           </div>

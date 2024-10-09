@@ -11,7 +11,12 @@ import {
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Masuk } from "@/components/auth/masuk";
-import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
+import {
+  ForwardRefExoticComponent,
+  RefAttributes,
+  useRef,
+  useState,
+} from "react";
 import { Daftar } from "@/components/auth/daftar";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,6 +30,8 @@ import {
   Angry,
   BotIcon,
   BrainIcon,
+  ChevronLeft,
+  ChevronRight,
   ExternalLinkIcon,
   Frown,
   Laugh,
@@ -177,12 +184,35 @@ export default function Home() {
       color: "bg-lime-100",
     },
   ];
-  const both  = [
-    "./both/1.svg",
-    "./both/2.svg",
-    "./both/3.svg",
-    "./both/4.svg",
-  ]
+  const both = ["./both/1.svg", "./both/2.svg", "./both/3.svg", "./both/4.svg"];
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -300,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 300,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const masda = () => {
+    setOpenR((openR) => !openR);
+    setOpen((open) => !open);
+  };
+  const dasma = () => {
+    setOpen((open) => !open);
+    setOpenR((openR) => !openR);
+  };
   return (
     <div className="bg-accen">
       <Masuk
@@ -190,15 +220,17 @@ export default function Home() {
         pop={() => {
           setOpen((open) => !open);
         }}
+        bop={() => masda()}
       />
       <Daftar
         className={openR ? "block" : "hidden"}
         pop={() => {
           setOpenR((openR) => !openR);
         }}
+        bop={() => dasma()}
       />
       <div className="p-4 md:p-8 bg-paccent">
-        <div className="flex sticky bg-paccent backdrop-blur top-2 z-50 md:z-0 md:relative md:top-0 p-4 rounded-md justify-center m-auto items-center ">
+        <div className="hidden sm:flex  bg-paccent backdrop-blur  md:z-0 md:relative md:top-0 p-4 rounded-md justify-center m-auto items-center ">
           <LandBack className=" py-2 mr-auto rounded-md">
             <LandItem tag="barflex">
               <span className="junePro text-proot text-2xl md:text-4xl">
@@ -249,7 +281,7 @@ export default function Home() {
                 Terhubunglah dengan komunitas yang peduli,
               </p>
               {/* <br/> */}
-              <Button className="bg-proot mt-8 mr-auto w-32">memulai</Button>
+              <Button className="bg-proot mt-8 mr-auto w-32" onClick={()=>{setOpenR((openR) =>!openR)}}>memulai</Button>
             </div>
             <img
               src="./asa2.png"
@@ -262,7 +294,7 @@ export default function Home() {
       <div className="p-0 py-8 sm:p-4 sm:py-8 md:p-8 bg-plgeen w-full">
         <div className="content block items-center overflow-hidden  m-auto w-full justify-center">
           <div className="flex flex-col gap-2 m-auto items-center">
-            <h2 className="text-2xl sm:text-3xl font-bold px-4 sm:px-0 xs sm:text-center mt-4 poppins-bold text-proot">
+            <h2 className="text-2xl sm:text-3xl font-bold px-4 sm:px-0 xs text-center mt-4 poppins-bold text-proot">
               Aktivitas yang membuat mood kamu naik
             </h2>
             {/* Subtitle similar to the smaller text in the image */}
@@ -300,7 +332,9 @@ export default function Home() {
                     <p className="text-proot ">{as.desc}</p>
                   </CardContent>
                   <CardFooter>
-                    <div className="flex flex-row gap-4 items-center">
+                    <div className="flex flex-row gap-4 items-center cursor-pointer" onClick={() =>{
+                      window.location.href = `/${as.title.toLowerCase()}`
+                    }}>
                       <span className="text-xl text-proot rockford">
                         mulai coba
                       </span>
@@ -319,7 +353,9 @@ export default function Home() {
             <CardHeader className="p-3 py-6 sm:p-6">
               <div className="junePro  text-2xl appearance-none flex items-center text-proot ">
                 <span>Zense forums</span>
-                <ExternalLinkIcon className="size-8 ml-auto" />
+                <ExternalLinkIcon className="size-8 ml-auto cursor-pointer" onClick={() => {
+                  window.location.href = "/forums"
+                }}/>
               </div>
               <CardContent className="bg-paccent p-2 sm:p-4 h-[340px] sm:min-h-[460px] max-h-[460px] overflow-y-scroll scroll-smooth no-scrollbar rounded appearance-none">
                 <div className="content bg-pbroot p-2 rounded h-32">
@@ -399,7 +435,7 @@ export default function Home() {
                     <span className="text-proot text-xl preahivear">
                       {as.name}
                     </span>
-                    {<as.chat className="text-proot ml-auto size-8" />}
+                    {<as.chat className="text-proot ml-auto size-8 cursor-pointer" onClick={() => {window.location.href = "/jurnals"}}/>}
                   </div>
                   <div className="block">
                     <p>{as.isi}</p>
@@ -417,51 +453,78 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-paccent w-full p-4 py-8 m-auto">
-        <div className="m-auto flex w-full overflow-x-scroll sm:overflow-hidden scrollbar-thin scrollbar-w-1 scrollbar-thumb-rounded-full scrollbar-h-2 scrollbar-track-transparent scrollbar-thumb-proot scroll-smooth snap-x snap-mandatory space-x-4 sm:space-x-0 p-4 sm:p-0 sm:grid lg:w-[90%] xl:w-[80%] grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:items-center sm:justify-center">
-          {review.map((as) => (
-            <div
-              key={as.avatar}
-              className={` min-h-64 snap-center shrink-0 w-[100%] p-6 rounded ${as.color} flex flex-col gap-4 `}
-            >
-              <div className="flex flex-row gap-4 items-center">
-                <div className="avatar">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-gray-300">
-                    <img
-                      src={as.avatar}
-                      alt="avatar"
-                      className="object-cover w-full h-full"
-                    />
+        <div className="relative flex items-center justify-center">
+          {/* Left Arrow */}
+          <button
+            onClick={scrollLeft}
+            className="absolute sm:hidden left-0 p-2 bg-proot rounded-full z-10"
+          >
+            <ChevronLeft size={24} color="white" />
+          </button>
+
+          <div
+            className="m-auto flex w-full overflow-x-scroll sm:overflow-hidden scrollbar-thin scrollbar-w-1 scrollbar-thumb-rounded-full scrollbar-h-2 scrollbar-track-transparent scrollbar-thumb-proot scroll-smooth no-scrollbar snap-x snap-mandatory space-x-4 sm:space-x-0 p-4 sm:p-0 sm:grid lg:w-[90%] xl:w-[80%] grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4 sm:items-center sm:justify-center"
+            ref={scrollRef}
+          >
+            {review.map((as) => (
+              <div
+                key={as.avatar}
+                className={`min-h-64 snap-center shrink-0 w-[100%] p-6 rounded ${as.color} flex flex-col gap-4`}
+              >
+                <div className="flex flex-row gap-4 items-center">
+                  <div className="avatar">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-gray-300">
+                      <img
+                        src={as.avatar}
+                        alt="avatar"
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
                   </div>
+                  <span className="text-proot text-lg preahivear">
+                    anonymous
+                  </span>
                 </div>
-                <span className="text-proot text-lg preahivear">anonymous</span>
+                <p className="text-proot text-sm sm:text-base preahivear leading-relaxed">
+                  {as.desc}
+                </p>
               </div>
-              <p className="text-proot text-sm sm:text-base preahivear leading-relaxed">
-                {as.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Right Arrow */}
+          <button
+            onClick={scrollRight}
+            className="absolute sm:hidden right-0 p-2 bg-proot rounded-full z-10"
+          >
+            <ChevronRight size={24} color="white" />
+          </button>
         </div>
       </div>
       <div className="w-full bg-plgeen">
-        <div className="content min-h-[60vh] py-20 flex items-center justify-center m-auto w-full ">
+        <div className="content min-h-[50vh] py-20 flex items-center justify-center m-auto w-full ">
           <div className="flex flex-col items-center m-auto gap-4">
             <div className="flex flex-row gap-4 items-center m-auto">
               <div className="rounded bg-green-100 p-4">
-                <Smile className="text-proot size-10 sm:size-16 lg:size-20"/>
+                <Smile className="text-proot size-10 sm:size-16 lg:size-20" />
               </div>
               <div className="rounded bg-blue-100 p-4">
-                <Frown className="text-proot size-10 sm:size-16 lg:size-20"/>
+                <Frown className="text-proot size-10 sm:size-16 lg:size-20" />
               </div>
               <div className="rounded bg-red-100 p-4">
-                <Angry className="text-proot size-10 sm:size-16 lg:size-20"/>
+                <Angry className="text-proot size-10 sm:size-16 lg:size-20" />
               </div>
             </div>
             <p className="preahivear text-center text-proot text-[16px] sm:text-[18px]">
-              apapun keadaan hatimu saat ini 
-              <br/>
+              apapun keadaan hatimu saat ini
+              <br />
               zense siap membantu
             </p>
-            <div className="bg-yellow-100 py-3 px-4 sm:py-4 sm:px-5 lg:py-4 lg:px-6 rounded appearance-none">
+            <div
+              onClick={() => {
+                setOpenR((openR) => !openR);
+              }}
+              className="bg-yellow-100 py-3 cursor-pointer px-4 sm:py-4 sm:px-5 lg:py-4 lg:px-6 rounded appearance-none"
+            >
               <span className="text-[18px] md:text-xl lg:text-2xl text-proot junePro">
                 Daftar
               </span>
@@ -469,10 +532,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Hide/>
+      <Hide />
       <div className="bg-proot w-full">
         <div className="min-h-24 w-full p-5 flex items-center m-auto justify-center">
-          <p className="text-xl preahivear text-center text-paccent">© zense 2024</p>
+          <p className="text-xl preahivear text-center text-paccent">
+            © zense 2024
+          </p>
         </div>
       </div>
     </div>
