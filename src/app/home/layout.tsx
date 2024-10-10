@@ -13,6 +13,7 @@ export default function RootLayout({
         <body
           className={`antialiased`}
         >
+          <audio src="./backsound.m4a" autoPlay className="hidden"/>
           {/* {path == tags[0] ? <NavbarPage /> : null} */}
           {children}
         </body>
