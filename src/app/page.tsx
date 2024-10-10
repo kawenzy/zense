@@ -532,7 +532,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Hide />
       <div className="bg-proot w-full">
         <div className="min-h-24 w-full p-5 flex items-center m-auto justify-center">
           <p className="text-xl preahivear text-center text-paccent">
@@ -540,6 +539,7 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <Hide />
     </div>
   );
 }

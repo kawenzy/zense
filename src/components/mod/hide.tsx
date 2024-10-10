@@ -11,7 +11,7 @@ export function Hide() {
           window.location.href = "https://www.google.com/";
         }}
         className="bg-proot fixed m-auto tooltip z-50 items-center bottom-0 right-0 left-0 w-fit mb-6 p-4 rounded cursor-pointer"
-        data-tip="tutup halamanmu"
+        data-tip="tutup halammanmu agar orang disebelahmu tidak mengetahui"
       >
         <CircleX className="size-8 text-paccent" />
       </motion.div>
