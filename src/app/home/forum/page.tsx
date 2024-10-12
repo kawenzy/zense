@@ -47,18 +47,21 @@ const fororang = [
 
 ]
 
-
+let des: string;
+let base: string = "";
+let title: string = "";
+let date: string = "";
 
 export default function Home() {
   const [open, SetOpen] = useState(false);
   return (
     <div className={`bg-paccent w-full ${open ? "p-0" : "p-4" } md:p-4`}>
-    <MayaPop classs={`${open ? "block" : "hidden"}`} avatar="" base="" description="" date="" keadaan={() => {
+    <MayaPop classs={`${open ? "block" : "hidden"}`} avatar="" base={base} description=""  date={date} keadaan={() => {
       SetOpen((open) => !open);
-    }} title=""/>
+    }} title={title}/>
       <div className="flex flex-col gap-4">
         <div className="flex flex-row w-full max-w-[800px] m-auto  gap-3 items-center">
-          <div className="flex w-full  items-center space-x-2">
+          <div className="flex w-full items-center space-x-2">
             <Input type="text" placeholder="search name foruns....." />
             <Button type="submit" className="bg-proot">Search</Button>
           </div>
@@ -94,6 +97,9 @@ export default function Home() {
                   <p className="text-proot block font-sans text-[12px] lg:text-xs">{as.tgl}</p>
                   <ExternalLink className="size-7 text-proot cursor-pointer" onClick={() => {
                     SetOpen((open) => !open);
+                    title = as.title;
+                    base = as.base;
+                    date =  as.tgl;
                   }}/>
                   </div>
                 </div>
