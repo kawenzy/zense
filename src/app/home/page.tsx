@@ -41,28 +41,28 @@ export const Logo = () => {
 const topJ = [
   {
     id: 4,
-    name: "John Doe",
+    name: "anonymous",
     desc: "hari ini adalah hari yang cukup indah",
     base: "bg-green-100",
     icon: Smile,
   },
   {
     id: 6,
-    name: "Jane Doe",
+    name: "anonymous",
     desc: "sungguh membosankan ,kenapa aku tidak bisa seperti mereka yang hebat dalam hal apapun",
     base: "bg-blue-100",
     icon: Frown,
   },
   {
     id: 4,
-    name: "carry salni",
+    name: "anonymous",
     desc: "sangat mengesalkan sekali karena tadi itu sungguh menyebalkan ,aku yang kena selalu padahal aku diam",
     base: "bg-red-100",
     icon: Angry,
   },
   {
     id: 5,
-    name: "micykel aslarf",
+    name: "anonymous",
     desc: "hahaha ntah kenapa disini rasanya sangat lucu sekali walaupun aku tidak mengenal secara langsung ",
     base: "bg-yellow-100",
     icon: Laugh,

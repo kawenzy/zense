@@ -14,54 +14,55 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Angry, ExternalLink, Frown, Laugh, ListCollapse, Smile } from "lucide-react";
-import { MayaPop } from "@/components/pop/dop";
+import { MadaPop, MayaPop } from "@/components/pop/dop";
 
 const topJ = [
     {
       id: 4,
-      name: "John Doe",
+      name: "anonymous",
       desc: "hari ini adalah hari yang cukup indah",
       base: "bg-green-100",
       icon: Smile,
     },
     {
       id: 6,
-      name: "Jane Doe",
+      name: "anonymous",
       desc: "sungguh membosankan ,kenapa aku tidak bisa seperti mereka yang hebat dalam hal apapun",
       base: "bg-blue-100",
       icon: Frown,
     },
     {
       id: 4,
-      name: "carry salni",
+      name: "anonymous",
       desc: "sangat mengesalkan sekali karena tadi itu sungguh menyebalkan ,aku yang kena selalu padahal aku diam",
       base: "bg-red-100",
       icon: Angry,
     },
     {
       id: 5,
-      name: "micykel aslarf",
+      name: "anonymous",
       desc: "hahaha ntah kenapa disini rasanya sangat lucu sekali walaupun aku tidak mengenal secara langsung ",
       base: "bg-yellow-100",
       icon: Laugh,
     },
   ];
   
+  
 
 export default function Home() {
   const [open, SetOpen] = useState(false);
   return (
     <div className={`bg-paccent w-full ${open ? "p-0" : "p-4" } md:p-4`}>
-    <MayaPop classs={`${open ? "block" : "hidden"}`} avatar="" base="" description="" date="" keadaan={() => {
+    {/* <MadaPop id={2} icon="" base="" desc="" keadaan={() => {
       SetOpen((open) => !open);
-    }} title=""/>
+    }} name=""/> */}
       <div className="flex flex-col gap-4">
         <div className="flex flex-row w-full max-w-[600px] m-auto  gap-3 items-center">
-          <div className="flex w-full  items-center space-x-2">
+          {/* <div className="flex w-full  items-center space-x-2">
             <Input type="text" placeholder="search name jurnals....." />
             <Button type="submit" className="bg-proot">Search</Button>
-          </div>
-          <Select>
+          </div> */}
+          {/* <Select>
             <SelectTrigger className="w-fit">
             <ListCollapse />
             </SelectTrigger>
@@ -75,7 +76,7 @@ export default function Home() {
                 <SelectItem value="Lucu">Lucu</SelectItem>
               </SelectGroup>
             </SelectContent>
-          </Select>
+          </Select> */}
         </div>
         <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-4 items-center m-auto">
         {topJ.map((as) => (
@@ -98,7 +99,7 @@ export default function Home() {
                 className={`preahivear text-proot text-xs relative z-10 bottom-0 px-2 py-3 bg-paccent text-center`}
               >
                 {" "}
-                {as.id} orang membalas
+                {as.id} orang bereaksi
               </span>
             </div>
           ))}

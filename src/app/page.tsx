@@ -68,7 +68,7 @@ export default function Home() {
   }[] = [
     {
       title: "Meditasi",
-      desc: "Lorem ipsum odor amet, consectetuer adipiscing elit. Ac nibh ad dui elementum dignissim platea curabitur platea eu.",
+      desc: "Buatkan suasana hatimu llebih baik sambil mendengarkan backsound yang sudah tersedia",
       url: "/chid",
       icon: BrainIcon,
       color: "green-300",
@@ -76,7 +76,7 @@ export default function Home() {
     },
     {
       title: "Robot",
-      desc: "Lorem ipsum odor amet, consectetuer adipiscing elit. Ac nibh ad dui elementum dignissim platea curabitur platea eu.",
+      desc: "Mengobrol dengan robot dari zense akan membuat mu senang ,ayok cobain sekarang biar tau!!",
       url: "/ai",
       icon: BotIcon,
       color: "violet-300",
@@ -84,7 +84,7 @@ export default function Home() {
     },
     {
       title: "Mood",
-      desc: "Lorem ipsum odor amet, consectetuer adipiscing elit. Ac nibh ad dui elementum dignissim platea curabitur platea eu.",
+      desc: "Beberapa rekomendasi yang dapat membantu meningkatkan mood hatimu ",
       url: "/mood",
       icon: SmilePlusIcon,
       color: "red-300",
@@ -329,7 +329,7 @@ export default function Home() {
                     </div>
                   </div>
                   <CardContent>
-                    <p className="text-proot ">{as.desc}</p>
+                    <p className="text-proot line-clamp-2">{as.desc}</p>
                   </CardContent>
                   <CardFooter>
                     <div className="flex flex-row gap-4 items-center cursor-pointer" onClick={() =>{
@@ -444,7 +444,7 @@ export default function Home() {
                     className={`preahivear text-proot text-xs px-2 py-3 ${as.color} text-center`}
                   >
                     {" "}
-                    20 orang membalas
+                    20 orang bereaksi
                   </span>
                 </div>
               ))}
