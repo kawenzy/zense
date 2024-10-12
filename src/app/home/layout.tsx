@@ -21,7 +21,7 @@ export default function RootLayout({
     const links = [
       {
         label: "Dashboard",
-        href: "#",
+        href: "/home",
         icon: (
           <HomeIcon className="text-neutral-700 h-5 w-5 flex-shrink-0" />
         ),
@@ -35,14 +35,14 @@ export default function RootLayout({
       },
       {
         label: "Forum",
-        href: "#",
+        href: "/home/forum",
         icon: (
           <Users className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
         ),
       },
       {
         label: "Jurnal",
-        href: "#",
+        href: "/home/jurnal",
         icon: (
           <NotebookText className="text-neutral-700 h-5 w-5 flex-shrink-0" />
         ),
@@ -61,7 +61,7 @@ export default function RootLayout({
         <body
           className={`antialiased`}
         >
-          <audio src="./backsound.m4a" autoPlay className="hidden"/>
+          {/* <audio src="./backsound.m4a" autoPlay className="hidden"/> */}
           <div
       className={cn(
         "rounded-md flex flex-col md:flex-row bg-paccent w-full flex-1 overflow-x-hidden  mx-auto border border-neutral-200 h-full min-h-screen",

@@ -98,22 +98,7 @@ const fororang = [
     base: "bg-yellow-100",
     tgl: "23 november 2024"
   },
-  // {
-  //   id: 14,
-  //   name: "Dalton mercurius",
-  //   title: "perubahan singkat yang pernah terjadi",
-  //   desc: "pernah gak sih kalian yang ingin berubah menjadi yang kalian inginkan tetapi hanya sementara , seperti angin lalu yang hanya numpang lewat",
-  //   pf: "./avatar/sq.png",
-  //   tgl: "5 november 2024"
-  // },
-  // {
-  //   id: 12,
-  //   name: "ying xun fa",
-  //   title: "membuat diri kebih baik",
-  //   desc: "hey aku disini ingin mengajak kalian menjadi lebih baik dari hari kemarin , disini saya juga masih berusaha bisa lebih baik dari diri saya yang kemarin , mungkin misal kalian ingin ikut ayok kita ngobrol di forums sini agar bisa saling share",
-  //   pf: "./avatar/rs.png",
-  //   tgl: "18 november 2024"
-  // },
+
 ]
 
 const recomen = [
