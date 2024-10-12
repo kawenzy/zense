@@ -4,7 +4,7 @@ import { Flex } from "@radix-ui/themes";
 import { LandBack, LandItem } from "../mod/landme";
 
 export default function NavbarPage() {
-  let quotes = [
+  const quotes = [
     "Tidak apa-apa untuk merasa tidak baik-baik saja.",
     "Setiap langkah kecil adalah pencapaian, hargai dirimu.",
     "Kau tidak sendirian, banyak yang peduli dan siap mendengar.",
